@@ -15,17 +15,15 @@ Run this command in your terminal inside the project root folder (where the `Doc
 ```bash
 docker build -t blackjack-game .
 ```
-### Start the Game
+### 2. Start the Game
 
 ```bash
 docker run -it blackjack-game 
 ```
 
---
+---
 
 ## Future work & Improvements
-
-While this project currently handles a single round of gameplay, here is how the architecture is designed to scale.
 
 While this project currently handles a single round of gameplay, here is how the architecture is designed to scale.
 
@@ -35,14 +33,14 @@ Currently, the game plays one hand and exits. To allow continuous play:
 
 *   **The Logic:** We would wrap the game flow in game.py inside a while True loop.
     
-*   \*This requires adding a \`reset\_round()\` method to clear the \`self.player.hand\` lists and potentially re-shuffle if the deck is running low.\*
+*   This requires adding a \`reset\_round()\` method to clear the \`self.player.hand\` lists and potentially re-shuffle if the deck is running low.
     
 
 ### 2\. From Version Control to Full CI/CD
 
 Currently, this project uses **Version Control** (Git) and **Deployment** packaging (Docker). The next step is to implement a full **CI/CD Pipeline**.
 
-*   **Continuous Integration (CI):** \* _Goal:_ Ensure code doesn't break when new features are added.
+*   **Continuous Integration (CI):**  _Goal:_ Ensure code doesn't break when new features are added.
     
     *   _How:_ Use **GitHub Actions** to automatically install the package and run unit tests (pytest) every time code is pushed to the repository.
         
@@ -56,7 +54,7 @@ Currently, this project uses **Version Control** (Git) and **Deployment** packag
 🧠 Design Discussion & "What If" Questions
 ------------------------------------------
 
-If you are reviewing this code or preparing for a technical discussion, here are potential questions that explore the design choices.
+Here are potential questions that explore the design choices.
 
 ### Q1: Why use pop() to deal cards?
 
